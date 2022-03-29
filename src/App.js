@@ -13,7 +13,7 @@ const App = () => {
       const url = "http://www.omdbapi.com/?s=avengers&apikey=628f5e7e"
       const response = await fetch (url);
       const responseJson = await response.json();
-      
+
       console.log(responseJson);
       setMovies(responseJson.Search);
     };
@@ -25,9 +25,10 @@ const App = () => {
     return (
     <div className='container-fluid movie-app'>
         <div className='row'>
-          <MovieListHeading heading='Movies'/>
+          <MovieListHeading heading='Movies'className='h1'/>
           <SearchBox/>
           </div>
+        
         <div className='row'>
             <MovieList movies={movies} />
         </div>
