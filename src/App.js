@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
+import SearchBox from './components/SearchBox';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -23,8 +24,10 @@ const App = () => {
 
     return (
     <div className='container-fluid movie-app'>
-        <div className='row'></div>
+        <div className='row'>
           <MovieListHeading heading='Movies'/>
+          <SearchBox/>
+          </div>
         <div className='row'>
             <MovieList movies={movies} />
         </div>
