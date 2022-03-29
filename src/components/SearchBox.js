@@ -1,9 +1,10 @@
 import React from 'react';
+import './SearchBox.css';
 
 const SearchBox = (props) => {
     return(
         <div className="col col-sm-4">
-            <input className="form-control" placeholder="Type to search..." ></input>
+            <input className="searchbox" placeholder="Type to search..." ></input>
         </div>
     );
 };

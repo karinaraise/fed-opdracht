@@ -9,10 +9,5 @@ body {
   grid-template-columns: auto auto auto auto;
 }
 
-h1 {
-  margin-top: 50px;
-  text-align: center;
-  font-family: 'Broadway', sans-serif;
-  font-size: 50px;
-  color: white;
-}
+
+

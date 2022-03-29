@@ -5,6 +5,7 @@ import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 
+
 const App = () => {
     const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState ('');
@@ -24,13 +25,15 @@ const App = () => {
 
     return (
     <div className='container-fluid movie-app'>
-        <div className='row'>
-          <MovieListHeading heading='Movies'className='h1'/>
+        <div className='search'>
+          <MovieListHeading heading='Movies'/>
           <SearchBox/>
           </div>
-        
+
+       
         <div className='row'>
             <MovieList movies={movies} />
+
         </div>
     </div>
     );
