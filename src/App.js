@@ -1,55 +1,36 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+
 import './App.css';
+import MovieList from './components/MovieList';
+import MovieListHeading from './components/MovieListHeading';
 
-function App() {
+const App = () => {
+    const [movies, setMovies] = useState([]);
+    const [searchValue, setSearchValue] = useState ('');
 
-// javascript code om de API aan te roepen
+    const getMovieRequest = async () => {
+      const url = "http://www.omdbapi.com/?s=avengers&apikey=628f5e7e"
+      const response = await fetch (url);
+      const responseJson = await response.json();
+      
+      console.log(responseJson);
+      setMovies(responseJson.Search);
+    };
 
+    useEffect(() => {
+      getMovieRequest ();
+    }, []);
 
-
-  return (
-    <div>
-    <header>Filmzoeker</header>
-    <div class="zoeken">     
-          <input type="text" placeholder="search..."></input>
-        <button type="submit" class="search-button"> Search </button> 
-    </div>
-        <main>
-    <div class="gridContainer">
-    <div class="posterBox"> 
-        <div class="titel">spiderman</div> 
-        <img src="images/spiderman.webp" alt="Spiderman" class="poster" /> 
-        <div class="beschrijving"> Dit is een beschrijving </div>
-    </div>
-    <div class="posterBox">
-        <div class="titel">Dumbo</div> 
-        <img src="images/dumbo.jpg" alt="Dumbo" class="poster" /> 
-        <div class="beschrijving"> Dit is een beschrijving </div>
-    </div>
-    <div class="posterBox">
-        <div class="titel">1917</div> 
-        <img src="images/1917.webp" alt="1917" class="poster" /> 
-        <div class="beschrijving"> Dit is een beschrijving </div>
-    </div>
-    <div class="posterBox">
-        <div class="titel">Dune</div> 
-        <img src="images/dune.jpg" alt="dune" class="poster" /> 
-        <div class="beschrijving"> Dit is een beschrijving </div>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-        </main>
-    
-        <footer>
-    
-    
-        </footer>
+    return (
+    <div className='container-fluid movie-app'>
+        <div className='row'></div>
+          <MovieListHeading heading='Movies'/>
+        <div className='row'>
+            <MovieList movies={movies} />
         </div>
-  );
-}
+    </div>
+    );
+};
 
 export default App;
+  
