@@ -1,6 +1,12 @@
 body {
-  background: #141414;
+  background-color: #141414;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('./images/content-bg.png');
+  background-size: cover;
+  box-sizing: border-box;
 }
 
 .row {
@@ -10,3 +16,9 @@ body {
 
 
 
+.header-image {
+  height: 157px;
+  margin-bottom: 50px;
+  background-image: url('./images/header-bg.png');
+  background-size: cover;
+}
