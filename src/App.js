@@ -25,18 +25,18 @@ const App = () => {
     }, [searchValue]);
 
     return (
-    <div className='container-fluid movie-app'>
-        <div >
-          <MovieListHeading heading='Movies'/>
-          <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
-          </div>
-
-       
-        <div className='row'>
-            <MovieList movies={movies} />
-
+     
+        <div className='container-fluid movie-app'>
+          <div className="header-image"></div>
+            <div >
+              <MovieListHeading heading='Movies'/>
+              <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
+            </div>
+          
+            <div className='row'>
+                <MovieList movies={movies} />
+            </div>
         </div>
-    </div>
     );
 };
 
