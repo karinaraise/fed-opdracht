@@ -34,5 +34,7 @@
 }
 
 .geenPoster {
-    width: 180px;
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
 }
