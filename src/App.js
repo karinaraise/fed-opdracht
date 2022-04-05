@@ -31,15 +31,12 @@ const App = () => {
             <div >
               <MovieListHeading heading='Movies'/>
               <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
-              </div>
-
+            </div>
           
             <div className='row'>
                 <MovieList movies={movies} />
-
             </div>
         </div>
-
     );
 };
 
