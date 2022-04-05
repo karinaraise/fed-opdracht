@@ -2,6 +2,7 @@
     margin: 20px;
     border:  solid white;
     justify-self:center;
+    position: relative;
 }
 
 .poster {
@@ -11,11 +12,11 @@
 }
 
 .overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
     position: absolute;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.39);
     width: 100%;
     transition: 0.5s ease-in-out;
     opacity: 0;
@@ -26,7 +27,8 @@
 
 .image-container:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.15);
+    color: rgba(0, 0, 0, 0.219);
 }
 
 .image-container:hover .overlay{
@@ -37,4 +39,9 @@
     width: 150px;
     height: 100%;
     object-fit: cover;
+}
+.hoverText{
+    color: white;
+    text-align: center;
+    font-size: 10px;
 }
