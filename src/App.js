@@ -29,7 +29,7 @@ const App = () => {
         <div className='container-fluid movie-app'>
           <div className="header-image"></div>
             <div >
-              <MovieListHeading heading='Movies'/>
+              <MovieListHeading heading='Movies & Series'/>
               <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
             </div>
           
