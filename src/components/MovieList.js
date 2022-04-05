@@ -4,7 +4,6 @@ import Image from '../images/posterzonderposter.png';
 
 function MovieList(props) {
 
-
     return (
         <>
             {props.movies.map((movie, index) => (
