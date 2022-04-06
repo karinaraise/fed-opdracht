@@ -4,8 +4,8 @@ import Image from '../images/posterzonderposter.png';
 
 function MovieList(props) {
 
-    return (
-        <>
+    return ( 
+    <>
             {props.movies.map((movie, index) => (
                 <div className='image-container'>
                    {/* <h3>{ movie.Title }</h3> */}
