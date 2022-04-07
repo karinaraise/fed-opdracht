@@ -12,7 +12,8 @@ function MovieList(props) {
                     { movie.Poster !== 'N/A' ?  <img src={movie.Poster} alt='movie' className='poster'></img> : <img src={Image} alt='moviese' className='geenPoster'></img>}
 
                     <div className='overlay'>
-                        <h3 className='hoverText'>{movie.Title}</h3>
+                        <h3 className='hoverText'>{movie.Title} <br></br> <br></br>{movie.Year}</h3>
+                        
                     </div>
                 </div>
             ))}
