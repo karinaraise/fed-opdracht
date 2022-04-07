@@ -25,33 +25,32 @@ const App = () => {
       getMovieRequest (searchValue);
     }, [searchValue]);
 
-    useEffect(() => {
+     useEffect(() => {
       const movieFavourites = JSON.parse(
         localStorage.getItem('react-fed-opdracht-favourites')
       );
-      if (movieFavourites) {
+      
         setFavourites(movieFavourites);
-      }
     }, []);
 
-    const saveToLocalStorage = (items) => {
+      const saveToLocalStorage = (items) => {
       localStorage.setItem('react-fed-opdracht-favourites', JSON.stringify(items));
     };
 
-    const addFavouriteMovie = (movie) => {
+   const addFavouriteMovie = (movie) => {
       const newFavouriteList = [...favourites, movie];
       setFavourites(newFavouriteList);
       saveToLocalStorage(newFavouriteList);
     };
   
-    const removeFavouriteMovie = (movie) => {
-      const newFavouriteList = favourites.filter(
-        (favourite) => favourite.imdbID !== movie.imdbID
-      );
+       const RemoveFavouriteMovie = (movie) => {
+       const newFavouriteList = favourites.filter(
+         (favourite) => favourite.imdbID !== movie.imdbID
+         );
   
       setFavourites(newFavouriteList);
       saveToLocalStorage(newFavouriteList);
-    };
+     };
     
     return (
         <div className='container-fluid movie-app'>
@@ -61,20 +60,18 @@ const App = () => {
               <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
             </div>
             <div className='row'>
-                <MovieList 
-                  movies={movies}
-                  handleFavouritesClick={addFavouriteMovie}
-                  favouriteComponent={AddFavourites} 
-                />
+                <MovieList movies={movies} 
+                handleFavouritesClick={addFavouriteMovie} 
+                favouriteComponent={AddFavourites} />
             </div>
             
             <div >
               <MovieListHeading heading='Favourites'/>
             </div>
             <div className='row'>
-                <MovieList 
+                <MovieList
                   movies={favourites}
-                  handleFavouritesClick={addFavouriteMovie}
+                  handleFavouritesClick={RemoveFavouriteMovie}
                   favouriteComponent={RemoveFavourites} 
                 />
             </div>
