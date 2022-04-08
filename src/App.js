@@ -22,15 +22,17 @@ const App = () => {
     };
 
     useEffect(() => {
-      getMovieRequest (searchValue);
+      getMovieRequest(searchValue);
     }, [searchValue]);
 
      useEffect(() => {
       const movieFavourites = JSON.parse(
         localStorage.getItem('react-fed-opdracht-favourites')
       );
-      
+
+      if (movieFavourites){
         setFavourites(movieFavourites);
+      }
     }, []);
 
       const saveToLocalStorage = (items) => {
