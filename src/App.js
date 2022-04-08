@@ -4,7 +4,7 @@ import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
-
+import Youtube from './components/Youtube';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -25,7 +25,6 @@ const App = () => {
     }, [searchValue]);
 
     return (
-     
         <div className='container-fluid movie-app'>
           <div className="header-image"></div>
             <div >
@@ -33,6 +32,8 @@ const App = () => {
               <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
             </div>
           
+            <Youtube/>
+
             <div className='row'>
                 <MovieList movies={movies} />
             </div>
